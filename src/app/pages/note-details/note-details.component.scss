@@ -55,7 +55,7 @@ input, textarea{
     text-align: right;
 
     button{
-        margin-left: 1rem;
+        margin-right: 1rem;
         height: 2.4rem;
         width: 6rem;
         border-radius: 20px;
@@ -79,5 +79,17 @@ input, textarea{
             background-color: darken(lightgreen, 10);
             transform: scale(1.05);
         }
+    }
+}
+
+@media only screen and (max-width: 900px){
+    input, textarea{
+        margin: 0.7rem;
+    }
+    label{
+        margin-left: 1rem;
+    }
+    .notePage{
+        height: 90vh;
     }
 }
