@@ -13,8 +13,7 @@ import { NotesService } from 'src/app/shared/notes.service';
     trigger('pageChange',[
       transition('void => *', [
         style({
-          transform: 'translateX(-100%)',
-          height: '*'
+          opacity: 0
         }),
         animate('500ms ease-out')
       ])
