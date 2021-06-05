@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$text: black;
+$background: white;
+$textareaC: rgb(238, 238, 238);
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $background;
+}
+
+p{
+    word-wrap: break-word;
+    margin-top: 0.3rem;
+}

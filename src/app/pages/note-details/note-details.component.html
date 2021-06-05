@@ -1,0 +1,12 @@
+<div class="form-container" [@pageChange]>
+    <form #noteForm="ngForm" class="notePage" (ngSubmit)="onSubmit(noteForm)">
+        <label class="fieldName">Title</label>
+        <input type="text" class="place" name="title" [ngModel]="note.title" required>
+        <label class="fieldName">Note</label>
+        <textarea class="textarea place" name="note" [ngModel]="note.note"></textarea>
+        <div class="buttons">
+            <button class="cancel" type="button" routerLink="">Cancel</button>
+            <button class="save" type="submit" [disabled]="!noteForm.valid">Save</button>
+        </div>
+    </form>
+</div>

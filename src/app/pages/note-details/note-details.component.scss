@@ -1,0 +1,83 @@
+@import "../../../styles.scss";
+
+.notePage{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.fieldName{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border:none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.textarea{
+    resize:vertical;
+    max-height: 60vh;
+    height: 5rem;
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.place{
+    font-size: 1.1rem;
+    border-color: transparent;
+    background-color: $textareaC;
+    border-radius: 20px;
+    min-height: 1.2rem;
+    padding: 0.7rem;
+    line-height: 1.5rem;
+    transition: 0.3s;
+
+    &:focus{
+        outline: none;
+        filter: drop-shadow(1px 6px 5px rgba(0,0,0,0.4));
+    }
+}
+
+input, textarea{    
+    transition: 0.2s;
+
+    &.ng-invalid{
+        background-color: rgb(255, 212, 219);
+    }
+}
+
+
+
+
+.buttons{
+    padding-top: 1rem;
+    text-align: right;
+
+    button{
+        margin-left: 1rem;
+        height: 2.4rem;
+        width: 6rem;
+        border-radius: 20px;
+        border: none;
+        transition: 0.3s;
+        font-size: 1.2rem;
+    }
+    .cancel{
+        background-color: lightpink;
+
+        &:hover{
+            background-color: darken(lightpink, 10);
+            transform: scale(1.05);
+        }
+    }
+
+    .save:not([disabled]){
+        background-color: lightgreen;
+
+        &:not([disabled]):hover{
+            background-color: darken(lightgreen, 10);
+            transform: scale(1.05);
+        }
+    }
+}

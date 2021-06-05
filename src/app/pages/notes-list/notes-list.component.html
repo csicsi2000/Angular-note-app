@@ -1,0 +1,9 @@
+<div class="main-container" [@pageChange]>
+    <!--
+    <input class="searchbar" type="text" placeholder="Search..." (keyup)="filter($any($event.target).value)" >
+    -->
+    <div class="notes-list">
+        <app-note-card *ngFor="let note of filteredNotes; let i = index" link="{{i}}" (delete)="deleteNote(i)" [title]="note.title" [body]="note.note"></app-note-card>
+    </div>
+    <button class="addNote" routerLink="new">+</button>
+</div>
