@@ -5,12 +5,13 @@ body {
   margin: 0px;
   padding: 0px;
   min-height: 100vh;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: white;
 }
 p {
   word-wrap: break-word;
   margin-top: 0.3rem;
 }
+
 
 /*# sourceMappingURL=styles.css.map*/
