@@ -50,4 +50,14 @@ export class NoteDetailsComponent implements OnInit {
     }
     this.router.navigateByUrl("/");
   }
+
+  titleValidation(text:string){
+    const titleInput = document.getElementById('title');
+    if(text.length > 0){
+      titleInput.style.background = "#eeeeee";
+    }
+    else{
+      titleInput.style.background = "#ffd4db";
+    }
+  }
 }

@@ -9,21 +9,47 @@ import { NotesService } from 'src/app/shared/notes.service';
   styleUrls: ['./notes-list.component.scss'],
   
   animations: [
-    
     trigger('pageChange',[
-      transition('void => *', [
+      transition(':enter', [
         style({
           opacity: 0
         }),
         animate('500ms ease-out')
+      ]),
+      transition(':leave', [
+        style({
+          opacity: 1
+        }),
+        animate('500ms ease-out', style({
+          opacity:0
+        }))
+      ])
+    ]),
+    
+    trigger('noteCardsAnim',[
+      transition('void => *',[
+        style({
+          height: 0
+        }),
+        animate('500ms')
+      ]),
+      transition(':leave',[
+        style({
+          height: '*'
+        }),
+        animate('500ms',style({
+          height: 0
+        }))
       ])
     ])
+    
   ] 
 })
 export class NotesListComponent implements OnInit {
 
   notes: Note[] = new Array<Note>();
   filteredNotes: Note[] = new Array<Note>();
+  
 
   constructor(private notesService: NotesService) { }
 
@@ -31,6 +57,8 @@ export class NotesListComponent implements OnInit {
     this.notes = this.notesService.getAll();
     this.filteredNotes = this.notes;
   }
+
+  SearchText:string; 
 
   deleteNote(id:number){
     this.notesService.delete(id);
@@ -45,7 +73,8 @@ export class NotesListComponent implements OnInit {
 
     terms.forEach(term => {
       let result: Note[] = this.relevantNotes(term);
-      allResult = [...allResult, ...result]
+      allResult = [...allResult, ...result];
+      console.log(allResult);
     });
     let uniqueResult = this.removeDuplicates(allResult);
     this.filteredNotes = uniqueResult;

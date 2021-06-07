@@ -1,7 +1,7 @@
 <div class="form-container" [@pageChange]>
     <form #noteForm="ngForm" class="notePage" (ngSubmit)="onSubmit(noteForm)">
         <label class="fieldName">Title</label>
-        <input type="text" class="place" name="title" [ngModel]="note.title" required>
+        <input type="text" class="place" name="title" id="title" [ngModel]="note.title" (keyup)='titleValidation($any($event.target).value)' required>
         <label class="fieldName">Note</label>
         <textarea class="textarea place" name="note" [ngModel]="note.note"></textarea>
         <div class="buttons">

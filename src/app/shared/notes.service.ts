@@ -24,6 +24,7 @@ export class NotesService {
   add(note: Note){
     let newLength = this.notes.push(note);
     let index = newLength-1;
+    this.notes[index].id = index;  
     return index;
   }
 
@@ -31,9 +32,15 @@ export class NotesService {
     let note = this.notes[id];
     note.title = title;
     note.note = body;
+    
   }
 
   delete(id: number){
     this.notes.splice(id, 1);
+    let i = 0;
+    this.notes.forEach(note => {
+      note.id = i;
+      i++;
+    });
   }
 }

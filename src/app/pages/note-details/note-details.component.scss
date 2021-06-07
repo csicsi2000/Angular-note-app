@@ -3,7 +3,7 @@
 .notePage{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 90vh;
     vertical-align: middle;
     justify-content: center;
 }
@@ -43,10 +43,6 @@
 
 input, textarea{    
     transition: 0.2s;
-
-    &.ng-invalid{
-        background-color: rgb(255, 212, 219);
-    }
 }
 
 
