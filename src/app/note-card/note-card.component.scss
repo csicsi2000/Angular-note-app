@@ -32,10 +32,9 @@
         .note-card-body{
             position: relative;
             max-height: 80px;
-            overflow-x: hidden;
+            overflow-y: hidden;
             display: block;
             line-height: 1.5rem;
-            
             .fade-out{
                 position: absolute;
                 bottom: 0;

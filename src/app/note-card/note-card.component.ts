@@ -13,11 +13,13 @@ import { Component, ElementRef, OnInit, ViewChild, Renderer2, Input, Output, Eve
         height: 0,
         opacity: 0,
       }),
-      animate(20000)
+      animate(200)
     ]),
 
     transition('* => void', [
-      animate('200ms ease-out')
+      animate(200,style({
+        height: 0
+      }))
     ])
   ])]
 })
@@ -35,16 +37,7 @@ export class NoteCardComponent implements OnInit {
   }
 
   ngOnInit(){
-    /*
-    let style = window.getComputedStyle(this.bodytext.nativeElement, null);
-    let viewableHeight = parseInt(style.getPropertyValue("height"), 10);
-    console.log(viewableHeight);
-    if(this.bodytext.nativeElement.scrollHeight > viewableHeight){
-      this.renderer.setStyle(this.overflowfade.nativeElement, 'display', 'block');
-    } else{
-      this.renderer.setStyle(this.overflowfade.nativeElement, 'display', 'none');
-    }
-    */
+    
   }
   onXButtonClick(){
     this.deleteEvent.emit();

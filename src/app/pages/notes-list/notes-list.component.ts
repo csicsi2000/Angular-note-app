@@ -25,7 +25,7 @@ import { NotesService } from 'src/app/shared/notes.service';
         }))
       ])
     ]),
-    
+    /*
     trigger('noteCardsAnim',[
       transition('void => *',[
         style({
@@ -42,7 +42,7 @@ import { NotesService } from 'src/app/shared/notes.service';
         }))
       ])
     ])
-    
+    */
   ] 
 })
 export class NotesListComponent implements OnInit {
